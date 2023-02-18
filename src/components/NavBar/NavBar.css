@@ -1,0 +1,15 @@
+.header {
+    margin-bottom: 50px; 
+    background-image: #ffffff;
+    border-bottom:1px solid #f01313;
+}
+.header img{
+    width: 100px;
+    height: 30px;
+}
+.header a {
+    color: #111111;
+}
+.header a:hover {
+    color: #198754;
+}

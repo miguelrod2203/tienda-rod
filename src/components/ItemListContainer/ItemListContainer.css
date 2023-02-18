@@ -1,0 +1,10 @@
+.contenedor-mensaje {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #f01313;
+    border-radius: 10px;
+}
+
+.contenedor-mensaje .mensaje {
+    text-align: center;
+}
