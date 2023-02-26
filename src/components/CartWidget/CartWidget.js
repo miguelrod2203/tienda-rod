@@ -4,6 +4,7 @@ import './CartWidget.css'
 
 
 export const CartWidget = () => {
+    
 
     return (
         <div className="carrito">
@@ -11,5 +12,6 @@ export const CartWidget = () => {
                 < BsFillCartFill /> <Badge bg="success">0</Badge>
             </a>
         </div>
+        
     )
 }
