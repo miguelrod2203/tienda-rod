@@ -32,15 +32,10 @@ export const Contador = () => {
             <h4>{`Stock: ${StockProducto - counter}`}</h4>
             <br/>
             <div className='btn btn-group'>
-                <button className=" btn btn-danger" onClick={handleRestar}> <BsTrash/>
-                </button>
+                <button className=" btn btn-danger" onClick={handleRestar}> <BsTrash/></button>
                 <button className=" btn btn-secundary" disabled>{counter}</button>
                 <button className=" btn btn-success" onClick={handleSumar}><BsCartCheck/></button>
             </div>
-            <p>La ultima solicitud realizada</p>
-            <p> Fecha: {new Date().toLocaleDateString()}</p>
-            <p> Hora: {new Date().toLocaleTimeString()}</p>
-            <br/>
         </div>
         
     )

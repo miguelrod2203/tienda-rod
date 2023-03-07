@@ -1,0 +1,9 @@
+.contenedor_carga {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.spinner-border {
+    --bs-spinner-width: 3rem;
+    --bs-spinner-height: 3rem;
+}

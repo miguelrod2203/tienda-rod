@@ -20,6 +20,7 @@ export const NavBar = () => {
                             <Nav.Link href="#Inicio">Inicio</Nav.Link>
                             <Nav.Link href="#Accesorios">Accesorios</Nav.Link>
                             <Nav.Link href="#Carpas">Carpas</Nav.Link>
+                            <Nav.Link href="#Colchones">Colchones</Nav.Link>
                             <Nav.Link href="#Coolers">Coolers</Nav.Link>
                             <Nav.Link href="#Sacos">Sacos</Nav.Link>
                             <Nav.Link href="#Mochilas">Mochilas</Nav.Link>
