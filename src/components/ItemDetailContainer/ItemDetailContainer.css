@@ -1,3 +1,7 @@
+.contenido {
+    width: 70%;
+    margin: auto;
+}
 .contenido h2 {
     text-align: center;
     margin: 20px;
@@ -7,17 +11,16 @@
     display: flex;
     flex-flow: row wrap;
     padding: 10px;
-    justify-content: baseline;
 }
 .contenido .contenido_ver_mas img {
-    width: 80%;
+    width: 100%;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgb(20, 18, 18, 0.3);
 }
 .contenido .contenido_ver_mas .detalle_producto {
     text-align: left;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 .contenido .contenido_ver_mas .detalle_producto p {
     margin-bottom: 0;
@@ -32,5 +35,13 @@
     .contenido .contenido_ver_mas { 
         justify-content: center;
         gap: 20px;
+    }
+}
+
+/* medias Querys para pantalla de 767px*/
+
+@media screen and (max-width: 576px) {
+    .contenido .contenido_ver_mas { 
+        flex-flow: column wrap;
     }
 }

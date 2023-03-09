@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 
@@ -20,7 +21,7 @@ export const Item = ( {producto} ) => {
             </div>
 
             <div className="boton_verMas d-grid">
-                <button className="btn justify-content-md-center btn-outline-success" id={producto.id}>Ver Más</button>
+                <Link to={`/detail/${producto.id}`} className="btn justify-content-md-center btn-outline-success">Ver Más</Link>
             </div>  
 
         </div>

@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { pedirItemPorId } from '../../helpers/pedirDatos'
 import { Carga } from '../Carga/Carga'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import './ItemDetailContainer.css'
 
 
-export const ItemDetailContainer = ( { itemId } ) => {
+export const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null)
     const [cargando, setCargando] = useState(true)
-    console.log(item)
+
+    const { itemId } = useParams()
 
     useEffect(() =>{
         pedirItemPorId(itemId)

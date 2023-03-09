@@ -1,10 +1,11 @@
+import { Volver } from "../Volver/Volver"
 
-// aqui va mi seccion ver mas
+
 
 export const ItemDetail = ( { item } ) => {
 
     return (
-        <div className="card_producto" key={item.id}>
+        <div key={item.id}>
             <div>
                 <h2>{item.modelo}</h2>
             </div>
@@ -28,12 +29,10 @@ export const ItemDetail = ( { item } ) => {
                     <p>Disponibles: {item.stock} unidades</p>
 
                 </div>
+                <Volver />
             </div>
-            <div className="boton_volver d-grid float-end ">
-                <a href="../index.html" className="btn justify-content-md-center btn-outline-primary">
-                    Volver
-                </a>
-            </div>
+
+            
 
         </div>
     )

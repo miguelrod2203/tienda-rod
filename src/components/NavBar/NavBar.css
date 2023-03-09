@@ -9,6 +9,8 @@
 }
 .header a {
     color: #111111;
+    text-decoration: none;
+    margin: 5px;
 }
 .header a:hover {
     color: #198754;
