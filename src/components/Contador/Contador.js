@@ -1,12 +1,11 @@
 import './Contador.css'
 import { useState } from 'react'
-import { BsTrash,BsCartCheck } from "react-icons/bs";
 
 
-export const Contador = () => {
+export const Contador = ( { item } ) => {
 
-    const [counter, setCounter] = useState(0)
-    const StockProducto = 11
+    const [counter, setCounter] = useState(1)
+    const StockProducto = item.stock
 
     const handleSumar = () => {
         if (counter < StockProducto){
@@ -27,14 +26,13 @@ export const Contador = () => {
 
     return (
         <div className="container">
-            <h2>Carpa verde</h2>
-            <p style={{fontSize: `120px`}}>⛺</p>
-            <h4>{`Stock: ${StockProducto - counter}`}</h4>
-            <br/>
+            <div>
+                <p><b>Sub total : {item.precio * counter} CLP</b></p>
+            </div>
             <div className='btn btn-group'>
-                <button className=" btn btn-danger" onClick={handleRestar}> <BsTrash/></button>
+                <button className=" btn btn-danger" onClick={handleRestar}> - </button>
                 <button className=" btn btn-secundary" disabled>{counter}</button>
-                <button className=" btn btn-success" onClick={handleSumar}><BsCartCheck/></button>
+                <button className=" btn btn-success" onClick={handleSumar}> + </button>
             </div>
         </div>
         

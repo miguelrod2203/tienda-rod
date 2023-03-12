@@ -13,7 +13,7 @@ export const NavBar = () => {
             <Navbar expand="md" sticky="top" >
                 <Container>
                     <Link to='/'>
-                        <img src="./imagenes/logo.png" className="d-inline-block align-top" alt="logo" title='Rod Shop'/>
+                        <img src="../../imagenes/logo.png" className="d-inline-block align-top" alt="logo" title='Rod Shop'/>
                     </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">

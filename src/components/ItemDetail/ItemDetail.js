@@ -1,3 +1,4 @@
+import { Contador } from "../Contador/Contador"
 import { Volver } from "../Volver/Volver"
 
 
@@ -21,15 +22,16 @@ export const ItemDetail = ( { item } ) => {
                     <p>Precio: {item.precio} CLP</p>
                     <p>Color: {item.color}</p>
                     <p>Categoria: {item.categoria}</p>
-                </div>
-                <div className="col-md-4 detalle_producto" >
                     <p>Dimensiones: {item.dimensiones}</p>
                     <p>Capacidad: {item.capacidad}</p>
                     <p>Peso: {item.peso}</p>
                     <p>Disponibles: {item.stock} unidades</p>
-
                 </div>
-                <Volver />
+                <div className="col-md-4 detalle_producto" >
+                    <Contador item ={item}/><br/>
+                    <Volver /> 
+                </div>
+                
             </div>
 
             

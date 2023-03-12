@@ -14,7 +14,7 @@ export const Volver = () => {
     }
 
     return (
-        <div className="boton_volver d-grid float-start">
+        <div className="boton_volver d-grid">
             <Button  variant="outline-primary" className="btn justify-content-md-center" onClick={handelVolver}>
                 <BsFillReplyAllFill />Volver
             </Button>

@@ -1,0 +1,27 @@
+.footer {
+    border-top: 2px solid #198754;   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around; 
+    align-items: baseline;
+    margin-top:2px; 
+}
+.footer .redes-sociales li { 
+    list-style: none;
+}
+.footer .redes-sociales li a { 
+    text-decoration: none;
+    color: #000000;
+}
+.footer .redes-sociales li a:hover { 
+    text-decoration: underline;
+}
+.footer .nosotros li { 
+    list-style: none;
+    color: #000000;
+}
+.footer .ubicacion li { 
+    list-style: none;
+    color: #000000;
+}

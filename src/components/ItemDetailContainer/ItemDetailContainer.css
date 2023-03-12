@@ -24,6 +24,7 @@
 }
 .contenido .contenido_ver_mas .detalle_producto p {
     margin-bottom: 0;
+    padding-left: 10px;
 }
 
 /* medias Querys para pantalla de 767px*/
