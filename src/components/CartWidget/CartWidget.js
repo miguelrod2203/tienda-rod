@@ -1,16 +1,20 @@
 import { BsFillCartFill } from "react-icons/bs";
 import Badge from 'react-bootstrap/Badge'
 import './CartWidget.css'
+import { useContext } from "react";
+import { CartContex } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 
 export const CartWidget = () => {
     
+    const { totalCantidad } = useContext(CartContex)
 
     return (
         <div className="carrito">
-            <a href="#Carrito">
-                < BsFillCartFill /> <Badge bg="success">0</Badge>
-            </a>
+            <Link to={"/cart"}>
+                < BsFillCartFill /> <Badge bg="success">{ totalCantidad() }</Badge>
+            </Link>
         </div>
         
     )

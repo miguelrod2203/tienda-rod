@@ -1,9 +1,26 @@
-import { Contador } from "../Contador/Contador"
+import { useContext, useState } from "react"
+import { Link } from "react-router-dom"
+import { CartContex } from "../../context/CartContext"
+import { ItemCount } from "../ItemCount/ItemCount"
 import { Volver } from "../Volver/Volver"
 
 
 
 export const ItemDetail = ( { item } ) => {
+
+    const { agregarAlCarrito, isInCart } = useContext(CartContex)
+
+    const [cantidad, setCantidad] = useState(1)
+
+    const handleAgregar = () => {
+        const newItem = {
+            ...item,
+            cantidad
+        }
+        
+        agregarAlCarrito(newItem)
+    }
+
 
     return (
         <div key={item.id}>
@@ -28,8 +45,14 @@ export const ItemDetail = ( { item } ) => {
                     <p>Disponibles: {item.stock} unidades</p>
                 </div>
                 <div className="col-md-4 detalle_producto" >
-                    <Contador item ={item}/><br/>
-                    <Volver /> 
+
+                    {
+                        isInCart(item.id)
+                            ? <Link to="/cart" className="btn btn-success">Ir a Comprar</Link>
+                            :
+                            <ItemCount item ={item} cantidad={cantidad} setCantidad={setCantidad} handleAgregar={handleAgregar} />
+                    } 
+                    <br/><br/> <Volver />
                 </div>
                 
             </div>
