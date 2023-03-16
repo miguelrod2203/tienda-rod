@@ -1,12 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContex = createContext()
 
-
+const init = JSON.parse(localStorage.getItem('cart')) || []
 
 export const CartProvider = ( { children } ) => {
 
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(init)
     console.log(cart)
   
     const agregarAlCarrito = (item) => {
@@ -28,15 +28,21 @@ export const CartProvider = ( { children } ) => {
         return cart.reduce((acc, producto) => acc + producto.cantidad * producto.precio, 0)
       }
 
+    // eliminar un producto
+    const eliminarDelCarrito = (id) => {
+        setCart( cart.filter((producto) => producto.id !== id))
+    }
+
     // vaciar todo el carrito
     const vaciarCarrito = () => {
         setCart([])
       }
 
-    // eliminar un producto
-    const eliminarDelCarrito = (id) => {
-        setCart( cart.filter((producto) => producto.id !== id))
-    }
+    useEffect(() => {
+      localStorage.setItem('cart', JSON.stringify(cart))
+    }, [cart])
+
+
 
     return (
         <CartContex.Provider value={{

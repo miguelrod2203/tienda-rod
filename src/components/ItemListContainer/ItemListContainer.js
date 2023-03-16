@@ -14,6 +14,7 @@ export const ItemListContainer = ( ) => {
     const { categoriaId } = useParams()
 
     useEffect(() => {
+        setCargando( true )
             
         pedirDatos() 
         .then((response) => {
@@ -37,7 +38,9 @@ export const ItemListContainer = ( ) => {
     return (
         <div className='contenedor' >
             {
-                cargando ? <Carga /> : <ItemList productos={productos} />
+                cargando 
+                    ? <Carga /> 
+                    : <ItemList productos={productos} />
             }
         </div>
         

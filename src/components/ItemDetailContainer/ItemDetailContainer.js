@@ -14,6 +14,7 @@ export const ItemDetailContainer = () => {
     const { itemId } = useParams()
 
     useEffect(() =>{
+        
         pedirItemPorId(itemId)
             .then((data) => {
                 setItem(data)

@@ -1,3 +1,30 @@
-.contenidoCarrito {
-    background-color: aqua;
+/* Estilos del carrito */
+.container-carrito{
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+.container-carrito .header-carrito{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #198754;
+}
+.container-carrito .contenido-carrito .row {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.container-carrito .contenido-carrito .imagen-carrito  {
+    text-align: center;
+}
+.container-carrito .contenido-carrito .imagen-carrito img {
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgb(20, 18, 18, 0.3);
+}
+.container-carrito .contenido-carrito .eliminar-carrito a {
+    margin: 10px;
+}
+.container-carrito .footer-carrito {
+    padding: 10px;
 }
