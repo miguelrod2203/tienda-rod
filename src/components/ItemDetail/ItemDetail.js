@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
-import { Link } from "react-router-dom"
 import { CartContex } from "../../context/CartContext"
+import { IrAComprar } from "../IrAComprar/IrAComprar"
 import { ItemCount } from "../ItemCount/ItemCount"
 import { Volver } from "../Volver/Volver"
 
@@ -20,7 +20,6 @@ export const ItemDetail = ( { item } ) => {
         
         agregarAlCarrito(newItem)
     }
-
 
     return (
         <div key={item.id}>
@@ -42,17 +41,18 @@ export const ItemDetail = ( { item } ) => {
                     <p>Dimensiones: {item.dimensiones}</p>
                     <p>Capacidad: {item.capacidad}</p>
                     <p>Peso: {item.peso}</p>
-                    <p>Disponibles: {item.stock} unidades</p>
+                    <p>Disponibles: {item.stock } und</p>
                 </div>
                 <div className="col-md-4 detalle_producto" >
 
                     {
                         isInCart(item.id)
-                            ? <Link to="/cart" className="btn btn-success">Ir a Comprar</Link>
+                            ? <IrAComprar />
                             :
                             <ItemCount item ={item} cantidad={cantidad} setCantidad={setCantidad} handleAgregar={handleAgregar} />
                     } 
-                    <br/><br/> <Volver />
+                    <br/>
+                    <Volver />
                 </div>
                 
             </div>

@@ -11,19 +11,17 @@ export const ItemCount = ( { item, cantidad, setCantidad, handleAgregar } ) => {
         if (cantidad < StockProducto){
             setCantidad(cantidad + 1)
         } else {
-            alert('Te has acabado el Stock de este producto.')
+            alert('Stock maximo producto alcanzado.')
         }       
     }
 
     const handleRestar = () => {
-        if (cantidad > 0) {
+        if (cantidad > 1) {
             setCantidad(cantidad - 1) 
         } else {
-            alert('No puedes tener valores negativos.')
+            alert('No se admiten valores negativos.')
         } 
     }
-
-
 
     return (
         <div className="contenedorContador">
@@ -31,9 +29,21 @@ export const ItemCount = ( { item, cantidad, setCantidad, handleAgregar } ) => {
                 <p><b>Sub total : {item.precio * cantidad} CLP</b></p>
             </div>
             <div className='btn btn-group'>
-                <button className=" btn btn-danger" onClick={handleRestar}> - </button>
+
+                <button 
+                    className={cantidad <= 1 ? " btn btn-danger" : " btn btn-primary"} 
+                    onClick={handleRestar}>
+                        - 
+                </button>
+
                 <button className=" btn btn-secundary" disabled>{cantidad}</button>
-                <button className=" btn btn-success" onClick={handleSumar}> + </button>
+
+                <button 
+                    className={cantidad === StockProducto ? " btn btn-danger" : " btn btn-success"} 
+                    onClick={handleSumar}>
+                        + 
+                </button>
+
             </div>
             <div className="boton_agregar d-grid">
                 <Button  variant="outline-success" className="btn justify-content-md-center" onClick={handleAgregar}>
