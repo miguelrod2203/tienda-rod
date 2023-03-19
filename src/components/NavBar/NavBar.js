@@ -9,8 +9,8 @@ import './NavBar.css'
 export const NavBar = () => {
 
     return(
-        <header className='header'>
-            <Navbar expand="md" sticky="top" >
+        <header className='header fixed-top'>
+            <Navbar expand="md" >
                 <Container>
                     <Link to='/'>
                         <img src="../../imagenes/logo.png" className="d-inline-block align-top" alt="logo" title='Rod Shop'/>

@@ -1,6 +1,7 @@
 import './ItemCount.css'
 import { Button } from "react-bootstrap"
 import { BsFillCartPlusFill } from "react-icons/bs";
+import { toast } from 'react-toastify';
 
 
 export const ItemCount = ( { item, cantidad, setCantidad, handleAgregar } ) => {
@@ -11,7 +12,22 @@ export const ItemCount = ( { item, cantidad, setCantidad, handleAgregar } ) => {
         if (cantidad < StockProducto){
             setCantidad(cantidad + 1)
         } else {
-            alert('Stock maximo producto alcanzado.')
+            toast.warn('Stock máximo.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                theme: "light",
+                style: {
+                    background: "#f1f1f1",
+                    width: "30vh",
+                    borderRadius: "10px",
+                    fontSize: ".75rem",
+                    padding: "5px"
+                  }                
+            });
         }       
     }
 
@@ -19,7 +35,22 @@ export const ItemCount = ( { item, cantidad, setCantidad, handleAgregar } ) => {
         if (cantidad > 1) {
             setCantidad(cantidad - 1) 
         } else {
-            alert('No se admiten valores negativos.')
+            toast.warn('No se admiten valores negativos.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                theme: "light",
+                style: {
+                    background: "#f1f1f1",
+                    width: "30vh",
+                    borderRadius: "10px",
+                    fontSize: ".75rem",
+                    padding: "5px"
+                  }                
+            });
         } 
     }
 

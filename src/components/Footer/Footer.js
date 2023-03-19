@@ -1,4 +1,3 @@
-
 import { BsFacebook, BsInstagram, BsTwitter, BsTelephoneForward } from "react-icons/bs";
 import './Footer.css'
 

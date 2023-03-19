@@ -1,9 +1,8 @@
 import { useContext } from 'react'
 import { CartContex } from '../../context/CartContext'
-import './Cart.css'
 import { CartConProductos } from './CartConProductos'
 import { CartVacio } from './CartVacio'
-
+import './Cart.css'
 
 
 export const Cart = () => {

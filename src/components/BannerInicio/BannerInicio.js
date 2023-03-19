@@ -16,9 +16,9 @@ export const BannerInicio = () => {
         <div className="contenedorBanner">
             <div className='imagenBanner'>
                 <img src="../../imagenes/banner.jpg" alt="banner" title='banner'/>
-                <div className='textoBanner'>
-                    <h4>Rod Shop</h4>
-                    <p>Productos para camping de primera calidad.</p>
+                <div className='textoBanner titulo'>
+                    <h4 className="animate__animated animate__zoomInDown">Rod Shop</h4>
+                    <p className="animate__animated animate__zoomInDown">Productos para camping de primera calidad.</p>
                 </div>
                 <div className='botonAllProductos'>
                     <Button  variant="outline-success" className="btn justify-content-md-center" onClick={handelAllProductos}>

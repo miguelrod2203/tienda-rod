@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 
 export const CartContex = createContext()
-
 const init = JSON.parse(localStorage.getItem('cart')) || []
 
 export const CartProvider = ( { children } ) => {
@@ -11,29 +11,63 @@ export const CartProvider = ( { children } ) => {
   
     const agregarAlCarrito = (item) => {
       setCart( [...cart, item] )
+
+      toast.success('Producto agregado.', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "light",
+        style: {
+            background: "#f1f1f1",
+            width: "30vh",
+            borderRadius: "10px",
+            fontSize: ".75rem",
+            padding: "5px"
+          }                
+    });
     }
   
-    // para no duplicar el contenido del carrito (buscar otra forma)
+    // funcion para no duplicar el contenido del carrito (buscar otra forma)
     const isInCart = (id) => {
       return cart.some((producto) => producto.id === id)
     }
   
-    // para tener la cantidad exacta de productos agregados al carrito
+    // funcion para tener la cantidad exacta de productos agregados al carrito
     const totalCantidad = () => {
       return cart.reduce((acc, producto) => acc + producto.cantidad, 0)
     }
 
-    // para tener el total a pagar
+    // funcion para tener el total a pagar
     const totalCompra = () => {
         return cart.reduce((acc, producto) => acc + producto.cantidad * producto.precio, 0)
       }
 
-    // eliminar un producto
+    // funcion para eliminar un producto
     const eliminarDelCarrito = (id) => {
         setCart( cart.filter((producto) => producto.id !== id))
+
+        toast.warn('Producto eliminado.', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          theme: "light",
+          style: {
+              background: "#f1f1f1",
+              width: "30vh",
+              borderRadius: "10px",
+              fontSize: ".75rem",
+              padding: "5px"
+            }                
+      });
     }
 
-    // vaciar todo el carrito
+    // funcion para vaciar todo el carrito
     const vaciarCarrito = () => {
         setCart([])
       }
@@ -41,8 +75,6 @@ export const CartProvider = ( { children } ) => {
     useEffect(() => {
       localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
-
-
 
     return (
         <CartContex.Provider value={{

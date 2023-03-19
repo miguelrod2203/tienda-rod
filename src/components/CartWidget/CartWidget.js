@@ -1,10 +1,9 @@
 import { BsFillCartFill } from "react-icons/bs";
 import Badge from 'react-bootstrap/Badge'
-import './CartWidget.css'
 import { useContext } from "react";
 import { CartContex } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-
+import './CartWidget.css'
 
 export const CartWidget = () => {
     

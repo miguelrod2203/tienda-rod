@@ -1,15 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-import { NavBar } from "./components/NavBar/NavBar";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import { Error404 } from './components/Error404/Error404';
-import { BannerInicio } from './components/BannerInicio/BannerInicio';
 import { CartProvider } from './context/CartContext';
+import { NavBar } from "./components/NavBar/NavBar";
+import { BannerInicio } from './components/BannerInicio/BannerInicio';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Cart } from './components/Cart/Cart';
 import { FormularioPago } from './components/FormularioPago/FormularioPago';
-
-
+import { Error404 } from './components/Error404/Error404';
+import { ToastContainer} from 'react-toastify';
+import 'animate.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
       <BrowserRouter>
 
         <NavBar />
-        
+        <ToastContainer />
         <Routes> 
 
           <Route path="/" element={ <BannerInicio /> }/>
@@ -35,6 +36,7 @@ function App() {
         </Routes>
 
       </BrowserRouter>
+      
 
     </CartProvider>
   );

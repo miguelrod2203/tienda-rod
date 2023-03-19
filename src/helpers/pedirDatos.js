@@ -23,6 +23,7 @@ export const pedirItemPorId = (id) => {
            } else {
                 reject({
                     error: 'Producto no encontrado.'
+                    
                 })
            }
        }, 1000)
