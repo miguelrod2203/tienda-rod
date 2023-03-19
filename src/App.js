@@ -7,6 +7,7 @@ import { Error404 } from './components/Error404/Error404';
 import { BannerInicio } from './components/BannerInicio/BannerInicio';
 import { CartProvider } from './context/CartContext';
 import { Cart } from './components/Cart/Cart';
+import { FormularioPago } from './components/FormularioPago/FormularioPago';
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/productos/:categoriaId" element={ <ItemListContainer  /> }/>
           <Route path="/detail/:itemId" element={ <ItemDetailContainer /> }/>
           <Route path="/cart" element={ <Cart /> }/>
+          <Route path="/cart/formulario" element={ <FormularioPago /> }/>
           <Route path="*" element={ <Error404 /> }/>
           
         </Routes>

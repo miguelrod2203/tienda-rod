@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { CartContex } from '../../context/CartContext'
 import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import { BsCartDash, BsCartCheck, BsFillTrashFill } from "react-icons/bs";
 
 
@@ -71,7 +72,7 @@ export const CartConProductos = () => {
                     </div>
 
                     <Button onClick={vaciarCarrito} variant="outline-warning" className='float-start'>Vaciar Carrito <BsCartDash /></Button>
-                    <Button variant="outline-success" className='float-end'>Ir a Pagar <BsCartCheck /></Button>
+                    <Link to={"/cart/formulario"} className='btn btn-outline-success float-end'>Ir a Pagar <BsCartCheck /></Link>
                                                 
                 </div>
             </div>

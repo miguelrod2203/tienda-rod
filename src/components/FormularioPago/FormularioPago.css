@@ -1,0 +1,79 @@
+.contenedorFormulario {
+	padding: 20px;
+    width: 100%;
+    margin: auto;
+	text-align: center;
+}
+
+.formulario {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	gap: 30px;
+	width: 100%;
+}
+
+.formulario label {
+	display: block;
+	font-weight: 600;
+	font-size: 14px;
+	padding-left: 10px;
+	margin-bottom: 2px;
+	color: #1f1f1f;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+	width: 300px;
+    margin: 10px;
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid #cccccc;
+    outline: none;
+}
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+	outline: none;
+	border: 2px solid #198754;
+}
+
+.formulario .error {
+	color: #e92b2d;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.formulario button[type="submit"] {
+	display: block;
+	background: #ffffff;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+	border: none;
+	cursor: pointer;
+	width: 300px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #198754;
+	color: #198754;
+	transition: .3s ease all;
+}
+
+.formulario button[type="submit"]:hover {
+	background: #198754;
+	color: #ffffff;
+}
+
+.formulario input[type="radio"] {
+	width: auto;
+}
+
+/* medias Querys para pantalla de 767px*/
+
+@media screen and (max-width: 576px) {
+    .formulario {
+		min-width: 100%;
+		
+	}
+}
