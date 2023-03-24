@@ -5,7 +5,7 @@ import { ItemList } from '../ItemList/ItemList'
 import { Carga } from '../Carga/Carga'
 import { useParams } from 'react-router-dom'
 import { collection, getDocs, query, where } from "firebase/firestore" 
-import { db } from '../../fireBase/config'
+import { db } from '../../firebase/config'
 
 
 

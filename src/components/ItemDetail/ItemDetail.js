@@ -33,7 +33,7 @@ export const ItemDetail = ( { item } ) => {
                     <img src={item.imagen}  alt={item.modelo} title={item.modelo}/>
                 </div>
                 <div className="col-md-4 detalle_producto" >
-                    <p>Codigo: 2023/03-{item.id}</p>
+                    <p>Ref: {item.id}</p>
                     <p>Marca: {item.marca}</p>
                     <p>Precio: {item.precio} CLP</p>
                     <p>Color: {item.color}</p>

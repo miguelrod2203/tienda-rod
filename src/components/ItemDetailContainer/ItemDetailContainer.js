@@ -4,7 +4,7 @@ import { Carga } from '../Carga/Carga'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import './ItemDetailContainer.css'
 import { doc, getDoc } from 'firebase/firestore'
-import { db } from '../../fireBase/config'
+import { db } from '../../firebase/config'
 
 
 export const ItemDetailContainer = () => {
