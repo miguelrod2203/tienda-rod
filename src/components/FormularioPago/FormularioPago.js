@@ -1,14 +1,19 @@
 import { useState, useContext, useEffect } from 'react'
 import { CartContex } from '../../context/CartContext'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import Swal from 'sweetalert2';
 import './FormularioPago.css'
 import { useNavigate } from 'react-router-dom';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../firebase/config';
+import { BannerFinal } from '../BannerFinal/BannerFinal';
+import { Volver } from '../Volver/Volver';
 
 export const FormularioPago = () => {
 
     const [formularioEnviado, setFormularioEnviado] = useState (false);
-    const { totalCompra, vaciarCarrito } = useContext(CartContex)
+    const [orderId, setOrderId] = useState (null);
+    const { totalCompra, vaciarCarrito, cart, mostrarAlerta } = useContext(CartContex);
+
     const navigate = useNavigate()
 
     const handleVolver = () => {
@@ -21,15 +26,17 @@ export const FormularioPago = () => {
         }    
     })
 
-    const mostrarAlerta = () => {        
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Compra finalizada',
-            text: 'Gracias por preferirnos, si lo deseas puedes seguir comprando.',
-            showConfirmButton: false,
-            timer: 5000
-        })
+    const order = {
+        cliente: {},
+        items: cart.map((prod) => ({id: prod.id, modelo: prod.modelo, precio: prod.precio, cantidad: prod.cantidad})),
+        total: totalCompra(),
+        fecha: new Date()
+    };
+
+    if(orderId) {
+        return (
+            <BannerFinal orderId={orderId}/>
+        )
     }
 
 	return (
@@ -51,7 +58,7 @@ export const FormularioPago = () => {
                     if(!valores.nombre){
                         errores.nombre = 'Por favor ingresa un nombre'
                     } else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)){
-                        errores.nombre = 'El nombre no puede incluir valores numéricos'
+                        errores.nombre = 'El nombre solo recibe texto '
                     }
 
                     // validacion de telefono
@@ -85,12 +92,21 @@ export const FormularioPago = () => {
 
                 onSubmit = {(valores, { resetForm }) => {
                     resetForm();
-                    console.log('formulario enviado');
                     setFormularioEnviado(true);
-                    vaciarCarrito();  
+                    
+                    const orderRef = collection(db, 'orders')
+                    order.cliente = valores
+
+                    addDoc(orderRef, order)
+                        .then((doc) => {
+                            setOrderId(doc.id)
+                        })                    
+
+                    vaciarCarrito(); 
+
                     setTimeout(inicio => {
                         handleVolver();
-                    }, 5500);
+                    }, 15000);
                 }}
 
             >   
@@ -98,7 +114,9 @@ export const FormularioPago = () => {
                     
                     <div className='contenedorFormulario'>
                         <div className="valorDeCompra">
-                            <p><b id="total">Total a pagar: {totalCompra().toFixed(2)} CLP</b></p>
+                            <p>
+                                <b>Total a pagar: {totalCompra().toFixed(2)} CLP</b>
+                            </p>
                         </div>
 
                         <Form className="formulario">
@@ -162,8 +180,9 @@ export const FormularioPago = () => {
                                 <label htmlFor="direccion">Observación</label>
                                 <Field name="Observacion" as="textarea" placeholder="Condición de envío u otro" />
                             </div>
-
+                            
                             <button type="submit">Enviar</button>
+                            <Volver />
                         </Form>
                     </div>
                 )}

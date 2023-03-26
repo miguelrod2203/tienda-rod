@@ -1,0 +1,21 @@
+.contenedorBannerFinal {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 58px;
+}
+.contenedorBannerFinal img {
+    width: 100%;
+    margin: auto;
+}
+.textoBannerFinal {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}

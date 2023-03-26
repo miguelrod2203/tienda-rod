@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 export const CartContex = createContext()
 const init = JSON.parse(localStorage.getItem('cart')) || []
@@ -72,6 +73,18 @@ export const CartProvider = ( { children } ) => {
         setCart([])
       }
 
+    // funcion para mostrat alerta final
+    const mostrarAlerta = () => {        
+      Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Compra finalizada',
+          text: 'En máximo 5 días hábiles recibirás tu compra.',
+          showConfirmButton: false,
+          timer: 2000
+      })
+  }
+
     useEffect(() => {
       localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
@@ -84,7 +97,8 @@ export const CartProvider = ( { children } ) => {
             totalCantidad,
             totalCompra,
             vaciarCarrito,
-            eliminarDelCarrito
+            eliminarDelCarrito,
+            mostrarAlerta
           }}>
             { children }
         </CartContex.Provider>

@@ -9,8 +9,11 @@
   
     * Proceso:
         1. Descargar/clonar el proyecto actual
-        2. Ejecutar en consola el comando: ```npm install```
-        3. Ejecutar en consola el comando: ```npm start```
+        2. abrir el proyecto en su editor Visual Studio Code u    otro.
+        3. Desde la carpeta de proyecto, ejecutar el comando ```npm install``` 
+            (eso va a reinstalar todas las librerías y dependencias listadas en 
+            el package.json, a fin de que el proyecto funcione).
+        4. Ejecutar en consola el comando: ```npm start```
  
     La aplicación se ha de ejecutar automáticamente en http://localhost:3000/
 
