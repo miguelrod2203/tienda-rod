@@ -57,9 +57,6 @@ export const CartConProductos = () => {
                                     </div>
 
                                 </div>
-                            
-                                
-
                                 <hr></hr>
                             </div>
                         ))

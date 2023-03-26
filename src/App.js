@@ -11,6 +11,7 @@ import { Error404 } from './components/Error404/Error404';
 import { ToastContainer} from 'react-toastify';
 import 'animate.css';
 import 'react-toastify/dist/ReactToastify.css';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="*" element={ <Error404 /> }/>
           
         </Routes>
+        <Footer />
 
       </BrowserRouter>
       

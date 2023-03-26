@@ -5,6 +5,7 @@ import { ItemDetail } from '../ItemDetail/ItemDetail'
 import './ItemDetailContainer.css'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../../firebase/config'
+import { Error404 } from '../Error404/Error404'
 
 
 export const ItemDetailContainer = () => {
@@ -33,7 +34,11 @@ export const ItemDetailContainer = () => {
     return (
         <div className='contenido' >
         {
-            cargando ? <Carga /> : <ItemDetail item={item} />
+            cargando 
+                ? <Carga /> 
+                : item.marca
+                    ? <ItemDetail item={item} />
+                    : <Error404 />
         }
     </div>
     )

@@ -14,7 +14,7 @@ export const CartProvider = ( { children } ) => {
 
       toast.success('Producto agregado.', {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 500,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: false,
@@ -51,7 +51,7 @@ export const CartProvider = ( { children } ) => {
 
         toast.warn('Producto eliminado.', {
           position: "top-right",
-          autoClose: 2000,
+          autoClose: 500,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: false,

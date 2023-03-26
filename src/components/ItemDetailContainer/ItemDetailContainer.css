@@ -1,6 +1,7 @@
 .contenido {
-    width: 70%;
-    margin: auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 70px;
 }
 .contenido h2 {
     text-align: center;

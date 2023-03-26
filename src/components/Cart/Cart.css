@@ -1,9 +1,9 @@
-/* Estilos del carrito */
 .container-carrito{
     padding: 20px;
     width: 100%;
     margin: auto;
     margin-top: 40px;
+    min-height: 80vh;
 }
 
 .container-carrito .header-carrito{
@@ -28,6 +28,7 @@
 }
 .container-carrito .footer-carrito {
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .carrito-vacio {
