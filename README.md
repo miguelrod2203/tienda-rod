@@ -2,7 +2,7 @@
     E-commerce temática camping.
 
 ## 1. Demo
-    El proyecto está disponible en el siguiente [enlace]().
+    El proyecto está disponible en el siguiente [enlace](https://rodshop.netlify.app/).
 
 ## 1.1. Ejecución del proyecto
     * Requerimientos: [Node.js](https://nodejs.org/es/)
