@@ -12,35 +12,43 @@ import { ToastContainer} from 'react-toastify';
 import 'animate.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { Footer } from './components/Footer/Footer';
+import { FavoritoProvider } from './context/FavoritoContext';
+import { Fav } from './components/Favorito/Fav';
+
 
 function App() {
 
 
   return (
   
-    <CartProvider>
+    <FavoritoProvider>
 
-      <BrowserRouter>
+      <CartProvider>
 
-        <NavBar />
-        <ToastContainer />
-        <Routes> 
+          <BrowserRouter>
 
-          <Route path="/" element={ <BannerInicio /> }/>
-          <Route path="/productos" element={ <ItemListContainer  /> }/>
-          <Route path="/productos/:categoriaId" element={ <ItemListContainer  /> }/>
-          <Route path="/detail/:itemId" element={ <ItemDetailContainer /> }/>
-          <Route path="/cart" element={ <Cart /> }/>
-          <Route path="/cart/formulario" element={ <FormularioPago /> }/>
-          <Route path="*" element={ <Error404 /> }/>
-          
-        </Routes>
-        <Footer />
+            <NavBar />
+            <ToastContainer />
+            <Routes> 
 
-      </BrowserRouter>
+              <Route path="/" element={ <BannerInicio /> }/>
+              <Route path="/productos" element={ <ItemListContainer  /> }/>
+              <Route path="/productos/:categoriaId" element={ <ItemListContainer  /> }/>
+              <Route path="/detail/:itemId" element={ <ItemDetailContainer /> }/>
+              <Route path="/cart" element={ <Cart /> }/>
+              <Route path="/productos/Favoritos" element={ <Fav />}/>
+              <Route path="/cart/formulario" element={ <FormularioPago /> }/>
+              <Route path="*" element={ <Error404 /> }/>
+              
+            </Routes>
+            <Footer />
+
+          </BrowserRouter>
+        
+      </CartProvider>
       
+    </FavoritoProvider>
 
-    </CartProvider>
   );
 }
 

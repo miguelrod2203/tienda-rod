@@ -24,7 +24,7 @@ export const FormularioPago = () => {
         if (formularioEnviado) {
             mostrarAlerta()
         }    
-    })
+    }, [formularioEnviado, mostrarAlerta])
 
     const order = {
         cliente: {},

@@ -1,0 +1,23 @@
+
+.contenedor-like {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+}
+.like {
+    font-size: 20px;
+    padding-right: 12px;
+    padding-top: 10px;
+    position: absolute;
+}
+.like svg {
+    color: #5f5e5e;
+}
+.like .active {
+    color: #ff0000;
+}
+.like :hover {
+    font-size: 22px;
+    transition: .5s;
+}

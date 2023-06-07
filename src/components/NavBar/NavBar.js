@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { CartWidget } from '../CartWidget/CartWidget';
+import { BsFillHeartFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import './NavBar.css'
 
@@ -25,6 +26,7 @@ export const NavBar = () => {
                             <Link to="/productos/Coolers">Coolers</Link>
                             <Link to="/productos/Sacos">Sacos</Link>
                             <Link to="/productos/Mochilas">Mochilas</Link>
+                            <Link to="/productos/Favoritos"><BsFillHeartFill /></Link>
                         </Nav>
                         <CartWidget/>
                     </Navbar.Collapse>
